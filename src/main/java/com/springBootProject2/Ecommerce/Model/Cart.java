@@ -19,6 +19,7 @@ public class Cart {
     int id;
     private int cartTotal;
 
+    //set the customer as cart.setCustomer(customer);
     @OneToOne
     @JoinColumn
     Customer customer;

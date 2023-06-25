@@ -2,6 +2,7 @@ package com.springBootProject2.Ecommerce.Model;
 
 import com.springBootProject2.Ecommerce.Enum.CardType;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Builder
 @Table(name = "card")
 public class Card {
     @Id

@@ -1,6 +1,7 @@
 package com.springBootProject2.Ecommerce.Model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Builder
 @Table(name = "customer")
 public class Customer {
     @Id
@@ -27,6 +29,7 @@ public class Customer {
     @OneToMany(mappedBy = "customer" , cascade = CascadeType.ALL)
     List<Card> cards = new ArrayList<>();
 
+    //when a customer registers amazoff creates cart for customer in backend
     @OneToOne(mappedBy = "customer" , cascade = CascadeType.ALL)
     Cart cart;
 

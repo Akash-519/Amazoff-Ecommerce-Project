@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/seller")
 public class SellerController {
+    //1. post : addSeller
+    //get all sellers
+    // get a seller by pancard
+    // find sellers of a particular age
+    //delete a seller by id
 
     @Autowired
     SellerService sellerService;
@@ -20,4 +25,6 @@ public class SellerController {
        return sellerService.addSeller(sellerRequestDto);
 
     }
+
+
 }
