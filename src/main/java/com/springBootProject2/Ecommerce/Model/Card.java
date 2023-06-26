@@ -17,7 +17,7 @@ import javax.persistence.*;
 public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    private int id;
     @Column(unique = true)
     private String cardNo;
     private int cvv;

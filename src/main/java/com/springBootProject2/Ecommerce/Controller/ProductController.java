@@ -39,9 +39,23 @@ public class ProductController {
 
        }
 
-       @GetMapping("/get/category/{productCategory}")
+      @GetMapping("/get/category/{productCategory}")
     public List<ProductResponseDto> getAllProductsByCategory(@PathVariable("productCategory") ProductCategory productCategory)
        {
            return productService.getProductsByCategory(productCategory);
+       }
+
+       @GetMapping("/get/{productId}")
+    public ResponseEntity getProduct(@PathVariable("productId") int id)
+       {
+           Product product;
+           try{
+               product = productService.getProduct(id);
+           }
+           catch (Exception e)
+           {
+               return new ResponseEntity(e.getMessage(),HttpStatus.BAD_REQUEST);
+           }
+           return new ResponseEntity(product,HttpStatus.ACCEPTED);
        }
 }

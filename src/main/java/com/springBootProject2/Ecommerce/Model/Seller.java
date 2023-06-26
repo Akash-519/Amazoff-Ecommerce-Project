@@ -15,7 +15,7 @@ import java.util.List;
 public class Seller {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-     int id;
+     private int id;
     private String name;
     @Column(unique = true)
     private String email;

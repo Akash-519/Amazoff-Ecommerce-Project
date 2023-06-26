@@ -2,6 +2,7 @@ package com.springBootProject2.Ecommerce.Service;
 
 import com.springBootProject2.Ecommerce.Convertor.ProductConvertor;
 import com.springBootProject2.Ecommerce.Enum.ProductCategory;
+import com.springBootProject2.Ecommerce.Exception.ProductNotFoundException;
 import com.springBootProject2.Ecommerce.Exception.SellerNotFoundException;
 import com.springBootProject2.Ecommerce.Model.Product;
 import com.springBootProject2.Ecommerce.Model.Seller;
@@ -54,5 +55,17 @@ public class ProductService {
           return productResponseDtos;
 
 
+    }
+    public Product getProduct(int id) throws ProductNotFoundException {
+
+        Product product;
+        try{
+            product = productRepository.findById(id).get();
+        }
+        catch (Exception e)
+        {
+            throw new ProductNotFoundException("Product id not found");
+        }
+        return product;
     }
 }

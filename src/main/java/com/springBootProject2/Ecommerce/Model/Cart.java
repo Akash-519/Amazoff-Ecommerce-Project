@@ -16,7 +16,7 @@ import java.util.List;
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    private  int id;
     private int cartTotal;
 
     //set the customer as cart.setCustomer(customer);
