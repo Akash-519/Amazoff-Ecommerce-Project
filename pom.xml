@@ -46,7 +46,14 @@
 			<scope>test</scope>
 		</dependency>
 
-<!--		&lt;!&ndash; swagger dependency&ndash;&gt;-->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+
+
+		<!--		&lt;!&ndash; swagger dependency&ndash;&gt;-->
 <!--		<dependency>-->
 <!--			<groupId>org.springdoc</groupId>-->
 <!--			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>-->

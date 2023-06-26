@@ -11,6 +11,8 @@ import com.springBootProject2.Ecommerce.ResponseDTO.ItemResponseDto;
 import com.springBootProject2.Ecommerce.ResponseDTO.OrderedResponseDto;
 import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,6 +23,8 @@ public class OrderedService {
     ProductRepository productRepository;
     @Autowired
     ItemService itemService;
+    @Autowired
+    JavaMailSender emailSender;
 
     public OrderedResponseDto placeOrder(OrderedRequestDto orderedRequestDto) throws Exception {
         Customer customer;
@@ -95,7 +99,16 @@ public class OrderedService {
                     .deliveryCharge(savedOrder.getDeliveryCharge())
                     .build();
 
-            return orderedResponseDto;
+        String text = "Congrats !. "+customer.getName()+" . Your Order has been placed ";
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom("abd.akash630@gmail.com");
+        message.setTo(customer.getEmail());
+        message.setSubject("Amazoff Shopping! Order Placed.");
+        message.setText(text);
+        emailSender.send(message);
+
+
+        return orderedResponseDto;
 
 
 

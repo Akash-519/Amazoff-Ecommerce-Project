@@ -3,10 +3,7 @@ package com.springBootProject2.Ecommerce.Controller;
 import com.springBootProject2.Ecommerce.RequestDTO.SellerRequestDto;
 import com.springBootProject2.Ecommerce.Service.SellerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/seller")
@@ -25,6 +22,22 @@ public class SellerController {
        return sellerService.addSeller(sellerRequestDto);
 
     }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteSeller(@PathVariable("id") int id)
+    {
+        String response;
+        try
+        {
+            response = sellerService.deleteSeller(id);
+        }
+        catch(Exception e)
+        {
+            return e.getMessage();
+        }
+        return response;
+    }
+
 
 
 }
