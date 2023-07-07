@@ -60,7 +60,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"sellerId\" : 1,\r\n    \"productName\" : \"RCB Jersey\",\r\n    \"price\" : 5000,\r\n    \"quantity\" : 100,\r\n    \"productCategory\" : \"SPORTS\"\r\n\r\n}",
+							"raw": "{\r\n    \"sellerId\" : 3,\r\n    \"productName\" : \"Rebook bet\",\r\n    \"price\" :500,\r\n    \"quantity\" : 100,\r\n    \"productCategory\" : \"SPORTS\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
